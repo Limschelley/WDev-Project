@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beehive</title>
+    <style>
+<style>
+    body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c4defd;
+    padding: 10px 20px;
+    color: #043873;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+}
+
+nav .logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav .logo h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #043873;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 5px 0;
+}
+
+nav ul li:hover {
+    background-color: #4f9cf9;
+    border-radius: 5px;
+}
+
+nav .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #333;
+    min-width: 180px;
+    z-index: 1;
+}
+
+nav .dropdown-content a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #043873;
+    background-color: #FFE492;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #479CF9;
+}
+
+.button-container .try-btn {
+    background-color: #479CF9;
+}
+
+.button-container .try-btn:hover {
+    background-color: #FFE492;
+}
+
+/* Section Styles */
+.intro-section, .body-section, .body1-section, .body2-section, .customise-section, .Outro2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.intro-section, .body2-section {
+    background-color: #043873;
+}
+
+.body-section, .Outro2, .customise-section {
+    background-color: #ffff;
+}
+
+.intro-text, /*.body-text, .body1-text,*/ .body2-text, .customise-text, .outro-text {
+    max-width: 50%;
+    font-size: 18px;
+    color: #ffff;
+}
+
+.intro-text h2, .body-text h2, .body1-text h2, .body2-text h2, .customise-text h2, .outro-text h2, .exit-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-left: 70px;
+}
+.customise-text h2, .outro-text h2 {
+    color: #333;
+}
+.customise-text p, .outro-text p {
+    color: #333;
+}
+
+.intro-text p, .body-text p, .body1-text p, .body2-text p, .customise-text p, .outro-text p, .exit-text p {
+    line-height: 1.6;
+    margin-left: 70px;
+}
+.exit-text p {
+    color: #ffff;
+}
+.exit-text h1{
+    color: #ffff;
+}
+
+.intro-image img, .body-image img, .body2-image img, .outro-image img, .body1-image img, .customise-image img {
+    width: 500px;
+    height: 450px;
+    margin-right: 70px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+}
+
+.intro-image img, .body-image img {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.body1-section, .customise-section {
+    flex-direction: row-reverse; /* This swaps the positions of the text and image */
+}
+
+.body1-text p, /*.customise-text p*/ {
+    max-width: 50%;
+    font-size: 18px;
+    color: #043873;
+    margin-right: 100px;
+}
+
+.body1-image img {
+    width: 500px;
+    height: 450px;
+    border-radius: 8px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.customise-image img {
+    margin-left: 100px;
+    margin-bottom: 20px; 
+    margin-top: 20px;
+}
+
+/* Button Styles */
+.BTN, .TRY {
+    padding: 12px 24px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 70px;
+}
+
+.OUT, .exit {
+    display: flex;
+    flex-direction: column; /* Stack the items vertically */
+    align-items: center; /* Horizontally center the content */
+    justify-content: center; /* Vertically center the content */
+    padding: 50px;
+    background-color: #043873;
+    text-align: center; /* Ensure the text is centered */
+}
+
+.Outro {
+    color: #fff;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-right: 90px;
+}
+
+/* Sponsors Section */
+.Sponsors {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center content vertically */
+    padding: 50px 20px;
+    background-color: #ffff; /* Light background color */
+}
+
+.sponsors-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #043873;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sponsors-image {
+    display: flex;
+    justify-content: space-around; /* Space out the logos */
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping for responsive design */
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.sponsors-image img {
+    width: 150px; /* Set width for the sponsor logos */
+    height: auto; /* Maintain the aspect ratio */
+    transition: transform 0.3s ease; /* Smooth scale effect on hover */
+}
+
+.sponsors-image img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sponsors-image {
+        justify-content: center; /* Center logos on smaller screens */
+    }
+
+    .sponsors-image img {
+        width: 120px; /* Smaller logo size for mobile devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .sponsors-text h2 {
+        font-size: 24px; /* Adjust title size for small screens */
+    }
+
+    .sponsors-image img {
+        width: 100px; /* Further reduce logo size for very small screens */
+    }
+}
+    #E {
+        text-align: center;
+        padding: 20px;
+        background-color: #043873;
+        color: white;
+        margin-top: 40px;
+    }
+    
+    #E span {
+        font-size: 14px;
+    }
+
+
+    </style>
+</head>
+<body>
+        <nav>
+            <div class="logo">
+                <img src="assets/imgs/bee-icon-9.png" alt="Logo">
+                <h1>Beehive</h1>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Products</a>
+                    <div class="dropdown-content">
+                        <a href="#">Product 1</a>
+                        <a href="#">Product 2</a>
+                        <a href="#">Product 3</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Solutions</a>
+                    <div class="dropdown-content">
+                        <a href="#">Solution 1</a>
+                        <a href="#">Solution 2</a>
+                        <a href="#">Solution 3</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Resources</a>
+                    <div class="dropdown-content">
+                        <a href="#">Resource 1</a>
+                        <a href="#">Resource 2</a>
+                        <a href="#">Resource 3</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Pricing</a>
+                    <div class="dropdown-content">
+                        <a href="#">Basic</a>
+                        <a href="#">Pro</a>
+                        <a href="#">Enterprise</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="button-container">
+                <button>Log In</button>
+                <button class="try-btn">Try</button>
+            </div>
+        </nav>
+    
+        <section class="intro-section">
+            <div class="intro-text">
+                <h2>BeeHive: Buzzing with Innovation, Building Your Digital Future.</h2>
+                <p>
+                    We provide innovative solutions to help you streamline your business and reach new heights. 
+                    Our platform offers a wide range of products and services that are designed to meet your unique needs. 
+                    Whether you're looking to optimize processes, enhance customer experience, or drive growth, we've got you covered.
+                </p>
+                <button class="BTN">Try Website For Free</button>
+            </div>
+            <div class="intro-image">
+                <img src="assets/imgs/blue.png" alt="Website Image">
+            </div>
+        </section>
+    
+        <section class="body-section">
+            <div class="body-text">
+                <h2>BeeHive Management</h2>
+                <p>
+                    With a focus on cutting-edge software development, cloud computing, and digital transformation, 
+                    BeeHive is dedicated to helping organizations streamline their operations, enhance productivity, and stay ahead 
+                    of the competition in an ever-evolving digital landscape.
+                </p>
+                <button class="BTN">Get Started</button>
+            </div>
+            <div class="body-image"> 
+                <img src="assets/imgs/blue.png" alt="Website Image">
+            </div>
+        </section>
+    
+        <section class="body1-section">
+            <div class="body1-text">
+                <h2>Innovative Solutions</h2>
+                <p>
+                    BeeHive stays ahead of the curve with forward-thinking solutions that address 
+                    the ever-changing demands of the tech world.
+                </p>
+                <button class="TRY">Try BeeHive Now!</button>
+            </div>
+            <div class="body1-image"> 
+                <img src="assets/imgs/net.png" alt="Website Image">
+            </div>
+        </section>
+    
+        <section class="body2-section">
+            <div class="body2-text">
+                <h2>Use Extension</h2>
+                <p>
+                    BeeHive embraces agile project management, ensuring rapid delivery and 
+                    continuous improvement through iterative feedback and collaboration.
+                </p>
+                <button class="BTN">Let's Go!</button>
+            </div>
+            <div class="body2-image"> 
+                <img src="assets/imgs/blue.png" alt="Website Image">
+            </div>
+        </section>
+    
+        <section class="customise-section">
+            <div class="customise-text">
+                <h2>Customer-Centric Approach</h2>
+                <p>
+                    BeeHive values its clients, focusing on understanding their needs and providing 
+                    personalized support at every step.
+                </p>
+                <button class="TRY">Try BeeHive Now!</button>
+            </div>
+            <div class="customise-image"> 
+                <img src="assets/imgs/blue.png" alt="Website Image">
+            </div>
+        </section>
+    
+        <section class="OUT">
+            <div class="Outro">
+                <h1>Wherever you are, the Hive is with you</h1>
+                <p>
+                    With Beehive, you're never alone in your digital journey. Our dedicated team is committed to providing seamless support, empowering your 
+                    business to thrive no matter where you are. Stay connected, stay productive, and let us help you create a buzz in your industry!
+                </p>
+                <button class="TRY">Show More</button>
+            </div>
+        </section>
+    
+        <section class="Outro2">
+            <div class="outro-text">
+                <h2>Cloud Solutions</h2>
+                <p>
+                    Leveraging the power of cloud technologies, BeeHive helps businesses optimize their infrastructure, 
+                    reduce costs, and enhance scalability and security.
+                </p>
+                <button class="BTN">Read More</button>
+            </div>
+            <div class="outro-image">
+                <img src="assets/imgs/connect.png" alt="Website Image">
+            </div>
+        </section>
+        <section class="Sponsors">
+            <div class="sponsors-text">
+                <h2>Our Sponsors</h2>
+            </div>
+            <div class="sponsors-image">
+                <img src="assets/imgs/apple.png" alt="apple">
+                <img src="assets/imgs/google.png" alt="google">
+                <img src="assets/imgs/microsoft.png" alt="microsoft">
+                <img src="assets/imgs/asus.png" alt="asus">
+
+            </div>
+        </section>
+
+        <section class="exit">
+            <div class="exit-text">
+                <h1>Work with your Favorite Apps using HIVE</h1>
+                <p>
+                    With HIVE, you can maximize efficiency, foster collaboration, and work smarter—not harder. 
+                    Discover the future of productivity and take your projects to the next level. Wherever your favorite apps take you, let HIVE support your journey!
+                </p>
+                <button class="TRY">Read More</button>
+            </div>
+        </section>
+
+        <div id="E">
+            <span>Copyright Schelley Lim. All Rights Reserved</span>
+        </div>
+
+</body>
+</html>
