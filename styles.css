@@ -1,0 +1,274 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    padding: 15px 20px;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menu Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #555;
+    border-radius: 5px;
+}
+
+/* Hamburger Menu (Hidden by Default) */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Hide Checkbox */
+#menu-toggle {
+    display: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+
+    .nav-links li {
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    /* Show Menu when Checkbox is Checked */
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Shared Styling for Both Sections */
+.content-section,
+.section-3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+    width: 100%;
+}
+
+/* Image Styling */
+.image1, 
+.vector-container {
+    flex: 1; /* Takes half the space */
+    display: flex;
+    justify-content: center;
+}
+
+.image1 img, 
+.vector-container img {
+    width: 600px; 
+    height: 500px;
+    object-fit: cover;
+}
+
+/* Text Styling */
+.Text1, 
+.text-container {
+    flex: 1;
+    padding: 40px 80px;
+    font-size: 32px;
+    font-weight: bold;
+    background-color: cadetblue;
+    color: white;
+    display: inline-block;
+    text-align: left;
+    border-radius: 8px; /* Optional for rounded edges */
+}
+
+.Text1 h2, 
+.text-container h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.Text1 p, 
+.text-container p {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Reverse Layout for Section 3 */
+.section-3 {
+    display: flex;
+    flex-direction: row; /* Image on the right, text on the left */
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 50px;
+}
+
+/* Page Break */
+.heading-section, .content-section, .heading-section, .section-3 {
+    margin-bottom: 50px; 
+}
+
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .content-section,
+    .section-3 {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .image1, 
+    .vector-container, 
+    .Text1, 
+    .text-container {
+        flex: none;
+        width: 100%;
+    }
+
+    .image1 img, 
+    .vector-container img {
+        width: 100%;
+        height: auto;
+    }
+
+    .Text1, 
+    .text-container {
+        padding: 20px;
+    }
+}
+
+/* Section Styling */
+.heading-section, .subheading-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 50px 20px;
+    width: 100%;
+}
+
+/* Heading Style */
+.heading-text, .subheading-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    background-color: cadetblue;
+    padding: 40px 100px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+/* CTA Button */
+.cta-button {
+    background: cadetblue;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Hover Effect */
+.cta-button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .heading-text {
+        font-size: 28px;
+    }
+
+    .cta-button {
+        width: 80%;
+    }
+}
+.content-section {
+    background-color: #f4f4f4; /* Light gray background */
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+/* Background for Section 3 */
+.section-3 {
+    background-color: #f4f4f4; /* Slightly darker gray for contrast */
+    padding: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
