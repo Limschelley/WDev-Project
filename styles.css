@@ -107,7 +107,7 @@
 /* Image Styling */
 .image1, 
 .vector-container {
-    flex: 1; /* Takes half the space */
+    flex: 1; 
     display: flex;
     justify-content: center;
 }
@@ -130,7 +130,7 @@
     color: white;
     display: inline-block;
     text-align: left;
-    border-radius: 8px; /* Optional for rounded edges */
+    border-radius: 8px; 
 }
 
 .Text1 h2, 
@@ -148,7 +148,7 @@
 /* Reverse Layout for Section 3 */
 .section-3 {
     display: flex;
-    flex-direction: row; /* Image on the right, text on the left */
+    flex-direction: row; 
     align-items: center;
     justify-content: center;
     gap: 20px;
@@ -194,10 +194,10 @@
 .heading-section, .subheading-section {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center vertically */
-    align-items: center; /* Center horizontally */
+    justify-content: center; 
+    align-items: center; 
     text-align: center;
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #f4f4f4; 
     padding: 50px 20px;
     width: 100%;
 }
@@ -242,7 +242,7 @@
     }
 }
 .content-section {
-    background-color: #f4f4f4; /* Light gray background */
+    background-color: #f4f4f4; 
     padding: 50px;
     width: 100%;
     display: flex;
@@ -254,7 +254,7 @@
 
 /* Background for Section 3 */
 .section-3 {
-    background-color: #f4f4f4; /* Slightly darker gray for contrast */
+    background-color: #f4f4f4; 
     padding: 50px;
     width: 100%;
     display: flex;
@@ -265,7 +265,7 @@
 }
 
 .testimonials-section {
-    background-color: #f4f4f4; /* Slightly darker gray for contrast */
+    background-color: #f4f4f4; 
     padding: 50px;
     width: 100%;
     display: flex;
