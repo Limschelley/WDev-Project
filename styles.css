@@ -12,6 +12,7 @@
     align-items: center;
     background: #333;
     padding: 15px 20px;
+
     position: relative;
 }
 
@@ -348,13 +349,3 @@
         width: 90%; /* Adjust width for smaller screens */
     }
 }
-
-
-
-
-
-
-
-
-
-

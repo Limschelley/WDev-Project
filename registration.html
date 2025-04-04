@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+
+        html, body {
+            height: 100%;
+        }
+
+        html{
+            display: table;
+            margin: auto;
+        }
+
+        body{
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        h3{
+            color: dodgerblue;
+        }
+        h2{
+            color: dodgerblue;
+            font: bold;
+        }
+        label, input[type="text"]{
+            display: block;
+        }
+        input[type="text"], input[type="password"], input[type="email"], input[type="date"]{
+            text-align: center;
+            width: 100%;
+            height: 50px;
+            border: 1px solid blue;
+            font-size: 14px;
+            border-radius: 13px;
+        }
+        input[type="submit"]{
+            text-align: center;
+            width: 100%;
+            height: 30px;
+            border: 1px solid blue;
+            font-size: 14px;
+            border-radius: 13px;
+        }
+        select {
+            text-align: center;
+            width: 100%;
+            height: 50px;
+            border: 1px solid blue;
+            font-size: 14px;
+            border-radius: 13px;
+        }
+
+        span.error {
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+<h2>REGISTRATION FORM</h2>
+    <p> <h3>Input your Primary Information</h3>
+        <label for=""> First Name:</label>
+        <input type="text" id="firstName"> 
+        <span class="error" id="firstNameError"></span>
+    </p>
+
+    <p>
+        <label for=""> Last Name:</label>
+        <input type="text" id="lastName">
+        <span class="error" id="lastNameError"></span>
+    </p>
+
+    <p>
+        <label for=""> Address:</label>
+        <input type="text" id="Address">
+        <span class="error" id="AddressError"></span>
+    </p>
+
+    <p> <h3>Input your Date of Birth </p></h3>
+    <p>
+         <label for="Date of Birth">Date of Birth</label> <input type="date" id="birthDate">
+         <span class="error" id="birthDateError"></span>
+    </p>
+    
+<p> <h3>Input your E-mail Address</h3>
+    <label for="email">Email Address:</label>
+    <input type="email" id="emailAddress" placeholder="Enter your email address">
+    <span class="error" id="emailAddressError"></span>
+</p>
+
+
+<p> <h3>Input your User Information</h3>
+    <label for="Uname">Username:</label>
+</p> <p>
+    <input type="text" id="userName" placeholder="Enter your username">
+    <span class="error" id="userNameError"></span>
+</p> <p>
+    <label for="Pword">Password:</label>
+</p> <p>
+    <input type="text" id="passWord"  placeholder="Enter your password">
+    <span class="error" id="passWordError"></span>
+</p> <p>
+    <label for="Confirm"> Confirm Password:</label>
+</p> <p>
+    <input type="text"  id="rePassword" placeholder="Re-enter your password">
+    <span class="error" id="rePasswordError"></span>
+</p>
+
+<input type="submit" value="Submit Information">
+    </form>
+
+<script>
+    function validateForm(){
+        let firstName = document.getElementById("firstName").value;
+
+            if(firstName == ""){
+                document.getElementById("firstNameError").innerHTML = "First Name is required!";
+                return false;
+            }else {
+                document.getElementById("firstNameError").innerHTML = "";
+            }
+
+        let lastName = document.getElementById("lastName").value;
+
+            if(lastName == ""){
+                document.getElementById("lastNameError").innerHTML = "Last Name is required!";
+                return false;
+            }else {
+                document.getElementById("lastNameError").innerHTML = "";
+            }
+        
+        let Address = document.getElementById("Address").value;
+
+            if(Address == ""){
+                document.getElementById("AddressError").innerHTML = "Address is required!";
+                return false;
+            }else {
+                document.getElementById("AddressError").innerHTML = "";
+            }
+
+        let birthDate = document.getElementById("birthDate").value;
+
+            if(birthDate == ""){
+                document.getElementById("birthDateError").innerHTML = "Birth Date is required!";
+                return false;
+            }else {
+                document.getElementById("birthDateError").innerHTML = "";
+            }
+
+        let emailAddress = document.getElementById("emailAddress").value;
+
+            if(emailAddress == ""){
+                document.getElementById("emailAddressError").innerHTML = "Email Address is required!";
+                return false;
+            }else {
+                document.getElementById("emailAddressError").innerHTML = "";
+            }
+
+        let userName = document.getElementById("userName").value;
+
+            if(userName == ""){
+                document.getElementById("userNameError").innerHTML = "Username is required!";
+                return false;
+            }else {
+                document.getElementById("userNameError").innerHTML = "";
+            }
+
+        let passWord = document.getElementById("passWord").value;
+
+            if(passWord == ""){
+                document.getElementById("passWordError").innerHTML = "Password is required!";
+                return false;
+            }else {
+                document.getElementById("passWordError").innerHTML = "";
+            }
+
+        let rePassword = document.getElementById("rePassword").value;
+
+            if(rePassword == ""){
+                document.getElementById("rePasswordError").innerHTML = "Please Re-enter your Password";
+                return false;
+            }else {
+                document.getElementById("rePasswordError").innerHTML = "";
+            }
+
+            //Length Validation
+            if(firstName.length < 2) {
+                document.getElementById("firstNameError").innerHTML = "First Name must contain atleast 2 characters!";
+                return false;
+            }else {
+                document.getElementById("firstNameError").innerHTML = "";
+            }
+
+            if(lastName.length < 2) {
+                document.getElementById("lastNameError").innerHTML = "Last Name must contain atleast 2 characters!";
+                return false;
+            }else {
+                document.getElementById("lastNameError").innerHTML = "";
+            }
+            
+            if(Address.length < 2) {
+                document.getElementById("AddressError").innerHTML = "Address must contain atleast 2 characters!";
+                return false;
+            }else {
+                document.getElementById("AddressError").innerHTML = "";
+            }
+
+            if(emailAddress.length < 2) {
+                document.getElementById("emailAddressError").innerHTML = "Email Address must contain atleast 2 characters!";
+                return false;
+            }else {
+                document.getElementById("emailAddressError").innerHTML = "";
+            }
+
+            if(userName.length < 2) {
+                document.getElementById("userNameError").innerHTML = "Username must contain atleast 2 characters!";
+                return false;
+            }else {
+                document.getElementById("userNameError").innerHTML = "";
+            }
+
+            if(passWord.length < 2) {
+                document.getElementById("passWordError").innerHTML = "Password must contain atleast 2 characters!";
+                return false;
+            }else {
+                document.getElementById("passWordError").innerHTML = "";
+            }
+            
+        }
+</script>
+</body>
+</html>
