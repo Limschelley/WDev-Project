@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>regExp</title>
+</head>
+<body>
+    <form onsubmit="return validateForm()">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName">
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        function validateForm(){
+            let firstName = document.getElementById("firstName").value;
+
+    //i is for case insensitive
+    //g is for global search 
+    //m is for multiline search
+
+    // The rain in Spain falls mainly in the plain.
+
+            let regex = /ain/g;
+
+            console.log(regex.test(firstName));
+            console.log(regex.exec(firstName));
+            console.log(firstName.match(regex));
+            console.log(firstName.search(regex));
+            console.log(firstName.replace(regex, "ane"));
+
+            let str = "The year is 2025, not 123!";
+
+            console.log(str.match(/[0-9]/g)); //output: "2","0","2","5,"1", "3"
+            console.log(str.match(/\d+/g)); //output: "2025", "123"
+            console.log(str.match(/yea./g)); //output: "year"
+            console.log(str.match(/not?/g)); //output: "not"
+
+            // ^ - start of string
+            // [a-z] any character, lowercase
+            // + one or more times
+            // $ - end of string
+            let charOnly = /^[a-z]+$/i; 
+            let numbersOnly = /^[0-9]+$/i; 
+            let alphanumeric = /^[a-z0-9]+$/i; 
+            
+            let dateFormat = /^\d{2}-\d{2}-\d{4}$/;
+            // 04-07-2025
+            let SSS = /^01-\d{9}-\d{4}-000$/;
+            // 01-000111223-1212-000
+            let bcode = /^\+01-\d{9}-000$/;
+            //+01-444111333-000
+            // +,*,? all need "\" infront
+            if(!bcode.test(firstName)) {
+                alert("Use format +01-XXXXXXXXX-000")
+            };
+            return false;
+        }
+    </script>
+</body>
+</html>
