@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Arrays</h1>
+    <div id="arrayContainer"></div>
+    <script>
+        let oceans = ["Pacific", "Atlantic"];
+        oceans[2] = "Indian"; //adding
+        oceans[0] = "Artic"; //append
+
+        oceans.unshift("Southern"); //beginning
+        oceans.shift(); //removes "Southern"
+
+        oceans.push("China Sea");
+        oceans.pop(); //removes "China Sea"
+        
+        const arrayContainer = document.getElementById("arrayContainer");
+        oceans.forEach(ocean => {
+            const oceanElement = document.createElement("p");
+            oceanElement.textContent = ocean;
+            arrayContainer.appendChild(oceanElement);
+        })
+
+    </script>
+</body>
+</html>

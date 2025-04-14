@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+</head>
+<body>
+    <h1>To-do List</h1>
+    <div id="todoContainer">
+        <input type="text" id="todoInput">
+        <button id="addTodoButton" onclick="addTodo()"> Add to do </button>
+
+        <button id="clearTodoButton" onclick="clearTodo()">Clear List</button>
+
+        <div id="todoList"></div>
+    </div>
+
+    <script>
+        let todos = [];
+
+        function loadTodo(){
+            const todoListContainer = document.getElementById("todoList");
+            todoListContainer.innerHTML = "";
+
+            todos.forEach((todo, index) => {
+                const todoElement = document.createElement ("p");
+                todoElement.innerHTML = `<span>${todo}</span>
+                    <button onclick ="removeTodo(${index})">X</button>
+                `;
+                todoListContainer.appendChild(todoElement);
+            });
+        }
+
+        function removeTodo(index){
+            todos.splice(index,1);
+            loadTodo();
+        }
+
+        function addTodo(){
+            const todoInput = document.getElementById("todoInput");
+            todos.push(todoInput.value);
+
+            loadTodo();
+    
+        }
+
+        function clearTodo(){
+            todos = [];
+            loadTodo();
+        }
+
+        loadTodo();
+    </script>
+</body>
+</html>
