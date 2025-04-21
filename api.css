@@ -1,0 +1,72 @@
+body {
+            font-family: Arial, sans-serif;
+            background-color: #fff0f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            column-gap: 130px;
+            row-gap: 40px; 
+            padding: 40px 20px;
+            max-width: 1300px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .dog-card {
+            background-color: #fffaf0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            width: 100%; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .dog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dog-card h3 {
+            margin: 0;
+            font-size: 1.5em;
+            color: #4b2840;
+        }
+
+        .dog-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+button {
+            background-color: #a0e7e5;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 20px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+button:hover {
+            background-color: #70d6ff;
+        }
+
+        .dog-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="api.css">
+    <title>API</title>
+</head>
+<body>
+    <h1>Dogs API</h1>
+    <button onclick="getAllDogs()">Fetch Dogs</button>
+
+    <div id ="dogList" class="container"></div>
+
+    <script>
+        const url = "https://dogapi.dog/api/v2";
+    
+        function getAllDogs(){
+            fetch(url + "/breeds")
+            .then(response => response.json())
+            .then(data => {
+                const dogList = data.data; 
+                const container = document.getElementById("dogList");
+                container.innerHTML = "";
+                console.log(dogList);
+                dogList.forEach(dog => {
+                    container.innerHTML += `
+                        <div class="dog-card">
+                            <img src="https://cdn2.thedogapi.com/images/${dog.attributes.image_id}.jpg" alt="${dog.attributes.name}">
+                            <h3>${dog.attributes.name}</h3>
+                            <p>${dog.attributes.description}</p>
+                        </div>
+                    `;
+                });
+            })
+            .catch(error => console.error ("Error fetching dogs", error));
+        }
+    </script>
+</body>
+</html>
